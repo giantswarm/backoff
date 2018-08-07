@@ -6,7 +6,7 @@ import (
 	"github.com/cenkalti/backoff"
 )
 
-func NewConstantBackoff(maxWait, maxInterval time.Duration) backoff.BackOff {
+func NewConstant(maxWait, maxInterval time.Duration) backoff.BackOff {
 	b := withMaxElapsedTime(backoff.NewConstantBackOff(maxInterval), maxWait)
 
 	b.Reset()
