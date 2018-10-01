@@ -1,5 +1,9 @@
 package backoff
 
+import (
+	"time"
+)
+
 const (
 	LongMaxWait   = 40 * time.Minute
 	MediumMaxWait = 10 * time.Minute
