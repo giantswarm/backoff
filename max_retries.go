@@ -14,7 +14,7 @@ func NewMaxRetries(maxRetries uint64, maxInterval time.Duration) Interface {
 	return b
 }
 
-func withMaxRetries(b backoff.BackOff, m uint64) *backOffMaxRetries {
+func withMaxRetries(b Interface, m uint64) *backOffMaxRetries {
 	return &backOffMaxRetries{
 		maxRetries: m,
 		retryCount: 0,
@@ -25,7 +25,7 @@ func withMaxRetries(b backoff.BackOff, m uint64) *backOffMaxRetries {
 type backOffMaxRetries struct {
 	maxRetries uint64
 	retryCount uint64
-	underlying backoff.BackOff
+	underlying Interface
 }
 
 func (b *backOffMaxRetries) NextBackOff() time.Duration {
