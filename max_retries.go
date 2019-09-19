@@ -3,7 +3,7 @@ package backoff
 import (
 	"time"
 
-	"github.com/cenkalti/backoff"
+	"github.com/cenkalti/backoff/v3"
 )
 
 func NewMaxRetries(maxRetries uint64, maxInterval time.Duration) BackOff {

@@ -1,7 +1,7 @@
 package backoff
 
 import (
-	"github.com/cenkalti/backoff"
+	"github.com/cenkalti/backoff/v3"
 )
 
 func Permanent(err error) error {
