@@ -15,7 +15,10 @@ func Test_MaxRetries(t *testing.T) {
 	b := NewMaxRetries(3, 1*time.Second)
 
 	s := time.Now()
-	Retry(o, b)
+	err := Retry(o, b)
+	if err != nil {
+		// we expect an error here and check more below
+	}
 
 	since := time.Since(s)
 	if since > 3*time.Second {
