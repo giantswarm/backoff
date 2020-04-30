@@ -9,28 +9,21 @@ import (
 var (
 	customError    = fmt.Errorf("custom error")
 	differentError = fmt.Errorf("different error")
+
+	tests = map[error]error{
+		// sanity check
+		customError:    customError,
+		differentError: differentError,
+		// actual test
+		Permanent(customError):    customError,
+		Permanent(differentError): differentError,
+	}
 )
 
 func Test_ErrorMatching(t *testing.T) {
-	// sanity check
-	err1 := customError
-	if !errors.Is(err1, customError) {
-		t.Fatalf("expected %v to match %T", err1, customError)
-	}
-
-	err2 := differentError
-	if !errors.Is(err2, differentError) {
-		t.Fatalf("expected %v to match %T", err2, differentError)
-	}
-
-	// actual test
-	permanentErr1 := Permanent(err1)
-	if !errors.Is(permanentErr1, customError) {
-		t.Fatalf("expected %v to match %T", permanentErr1, customError)
-	}
-
-	permanentErr2 := Permanent(err2)
-	if !errors.Is(permanentErr2, differentError) {
-		t.Fatalf("expected %v to match %T", permanentErr2, differentError)
+	for err, expectedType := range tests {
+		if !errors.Is(err, expectedType) {
+			t.Fatalf("expected %v to match %T", err, expectedType)
+		}
 	}
 }
