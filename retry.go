@@ -1,7 +1,7 @@
 package backoff
 
 import (
-	"github.com/cenkalti/backoff"
+	"github.com/cenkalti/backoff/v4"
 	"github.com/giantswarm/microerror"
 )
 
