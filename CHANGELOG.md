@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Permanent backoff works with Golang error matching functions.
 
 ### Changed
-- Bump github.com/celkati/backoff dependency from v2.2.1 to v4.0.2.
+- Bump github.com/cenkalti/backoff dependency from v2.2.1 to v4.0.2.
 
 ## [0.2.0] 2020-03-20
 
