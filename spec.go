@@ -3,7 +3,7 @@ package backoff
 import "time"
 
 // BackOff describes how a backoff has to be implemented. Also see
-// https://godoc.org/github.com/cenkalti/backoff#BackOff.
+// https://godoc.org/github.com/cenkalti/backoff/v4#BackOff.
 type BackOff interface {
 	NextBackOff() time.Duration
 	Reset()
