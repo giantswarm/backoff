@@ -2,13 +2,12 @@ package backoff
 
 import (
 	"errors"
-	"fmt"
 	"testing"
 )
 
 var (
-	customError    = fmt.Errorf("custom error")
-	differentError = fmt.Errorf("different error")
+	customError    = errors.New("custom error")
+	differentError = errors.New("different error")
 
 	tests = map[error]error{
 		// sanity check
@@ -23,7 +22,10 @@ var (
 func Test_ErrorMatching(t *testing.T) {
 	for err, expectedType := range tests {
 		if !errors.Is(err, expectedType) {
-			t.Fatalf("expected %v to match %T", err, expectedType)
+			t.Fatalf("errors.Is: expected %v to match %T", err, expectedType)
+		}
+		if !errors.As(err, &expectedType) {
+			t.Fatalf("errors.As: expected %v to match %T", err, expectedType)
 		}
 	}
 }
