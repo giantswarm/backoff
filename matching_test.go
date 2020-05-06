@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-var (
-	customError    = errors.New("custom error")
+func Test_ErrorMatching(t *testing.T) {
+	customError = errors.New("custom error")
 	differentError = errors.New("different error")
 
 	tests = map[error]error{
@@ -17,9 +17,7 @@ var (
 		Permanent(customError):    customError,
 		Permanent(differentError): differentError,
 	}
-)
 
-func Test_ErrorMatching(t *testing.T) {
 	for err, expectedType := range tests {
 		if !errors.Is(err, expectedType) {
 			t.Fatalf("errors.Is: expected %v to match %T", err, expectedType)
