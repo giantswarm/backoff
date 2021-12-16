@@ -41,7 +41,8 @@ func Test_ErrorMatching(t *testing.T) {
 		Permanent(wrappedError):    customTypeError,
 	}
 
-	for err, expectedTarget := range tests {
+	var err, expectedTarget error
+	for err, expectedTarget = range tests {
 		if !errors.Is(err, expectedTarget) {
 			t.Fatalf("errors.Is: expected %v to match %T", err, expectedTarget)
 		}
