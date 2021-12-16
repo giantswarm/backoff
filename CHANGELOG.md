@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Upgrade to Go 1.17
 - Upgrade github.com/giantswarm/microerror v0.2.0 to v0.4.0
+- Upgrade github.com/giantswarm/micrologger v0.3.1 to v0.6.0
 
 ### Fixed
 
