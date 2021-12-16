@@ -1,6 +1,6 @@
 module github.com/giantswarm/backoff
 
-go 1.13
+go 1.17
 
 require (
 	github.com/cenkalti/backoff/v4 v4.0.2
