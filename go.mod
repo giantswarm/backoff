@@ -3,7 +3,7 @@ module github.com/giantswarm/backoff
 go 1.17
 
 require (
-	github.com/cenkalti/backoff/v4 v4.1.2
+	github.com/cenkalti/backoff/v4 v4.1.3
 	github.com/giantswarm/microerror v0.4.0
 	github.com/giantswarm/micrologger v0.6.0
 )
