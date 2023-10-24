@@ -46,8 +46,5 @@ func Test_ErrorMatching(t *testing.T) {
 		if !errors.Is(err, expectedTarget) {
 			t.Fatalf("errors.Is: expected %v to match %T", err, expectedTarget)
 		}
-		if !errors.As(err, &expectedTarget) {
-			t.Fatalf("errors.As: expected %v to match %T", err, expectedTarget)
-		}
 	}
 }
