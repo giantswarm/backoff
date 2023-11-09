@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade to Go 1.20
+- Upgrade github.com/giantswarm/microerror v0.4.0 to v0.4.1
+- Upgrade github.com/giantswarm/micrologger v1.0.0 to v1.1.1
+- Upgrade github.com/go-kit/log v0.2.0 to v0.2.1
+- Upgrade github.com/go-logfmt/logfmt v0.5.1 to v0.6.0
+- Upgrade github.com/go-logr/logr v1.2.2 to v1.3.0
+
 ## [1.0.0] - 2021-12-16
 
 ### Changed
