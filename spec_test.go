@@ -3,7 +3,7 @@ package backoff
 import (
 	"testing"
 
-	"github.com/cenkalti/backoff/v4"
+	"github.com/cenkalti/backoff/v5"
 )
 
 // Test_BackOff tests if this library and underlying implementation interfaces
