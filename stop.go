@@ -3,7 +3,7 @@ package backoff
 import (
 	"time"
 
-	"github.com/cenkalti/backoff/v4"
+	"github.com/cenkalti/backoff/v6"
 )
 
 const Stop = backoff.Stop
