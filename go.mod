@@ -1,4 +1,4 @@
-module github.com/giantswarm/backoff
+module github.com/giantswarm/backoff/v2
 
 go 1.23
 
