@@ -7,19 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-06-30
+
 ### Changed
 
+- [Breaking] Upgrade github.com/cenkalti/backoff/v4 v4.3.0 to github.com/cenkalti/backoff/v6 v6.0.1
+    - On failure, `Retry`/`RetryNotify` now return a `*backoff.RetryError` wrapping
+      the last operation error instead of returning that error directly. Use
+      `errors.Is`/`errors.As` (or `microerror.Cause`) to match the underlying error;
+      comparing the returned error with `==` will no longer work.
 - Upgrade to Go 1.23
-- Upgrade github.com/cenkalti/backoff/v4 v4.3.0 to github.com/cenkalti/backoff/v6 v6.0.1
 - Upgrade github.com/giantswarm/micrologger v1.1.1 to v1.1.2
 - Upgrade github.com/go-logr/logr v1.3.0 to v1.4.2
-
-### Breaking
-
-- On failure, `Retry`/`RetryNotify` now return a `*backoff.RetryError` wrapping
-  the last operation error instead of returning that error directly. Use
-  `errors.Is`/`errors.As` (or `microerror.Cause`) to match the underlying error;
-  comparing the returned error with `==` will no longer work.
 
 ## [1.0.1] - 2024-06-04
 
@@ -59,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First release.
 
-[Unreleased]: https://github.com/giantswarm/backoff/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/giantswarm/backoff/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/giantswarm/backoff/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/giantswarm/backoff/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/giantswarm/backoff/compare/v0.2.0...v1.0.0
 [0.2.0]: https://github.com/giantswarm/backoff/releases/tag/v0.1.0...v0.2.0
