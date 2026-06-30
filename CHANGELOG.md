@@ -9,7 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Upgrade github.com/cenkalti/backoff v4 to v6.
+- Upgrade to Go 1.23
+- Upgrade github.com/cenkalti/backoff/v4 v4.3.0 to github.com/cenkalti/backoff/v6 v6.0.1
+- Upgrade github.com/giantswarm/micrologger v1.1.1 to v1.1.2
+- Upgrade github.com/go-logr/logr v1.3.0 to v1.4.2
 
 ### Breaking
 
