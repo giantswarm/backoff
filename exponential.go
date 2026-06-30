@@ -3,18 +3,14 @@ package backoff
 import (
 	"time"
 
-	"github.com/cenkalti/backoff/v4"
+	"github.com/cenkalti/backoff/v6"
 )
 
 func NewExponential(maxWait, maxInterval time.Duration) BackOff {
-	b := &backoff.ExponentialBackOff{
-		InitialInterval:     backoff.DefaultInitialInterval,
-		RandomizationFactor: backoff.DefaultRandomizationFactor,
-		Multiplier:          backoff.DefaultMultiplier,
-		MaxInterval:         maxInterval,
-		MaxElapsedTime:      maxWait,
-		Clock:               backoff.SystemClock,
-	}
+	e := backoff.NewExponentialBackOff()
+	e.MaxInterval = maxInterval
+
+	b := withMaxElapsedTime(e, maxWait)
 
 	b.Reset()
 

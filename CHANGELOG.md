@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade github.com/cenkalti/backoff v4 to v6.
+
+### Breaking
+
+- On failure, `Retry`/`RetryNotify` now return a `*backoff.RetryError` wrapping
+  the last operation error instead of returning that error directly. Use
+  `errors.Is`/`errors.As` (or `microerror.Cause`) to match the underlying error;
+  comparing the returned error with `==` will no longer work.
+
 ## [1.0.1] - 2024-06-04
 
 ### Changed

@@ -1,9 +1,9 @@
 module github.com/giantswarm/backoff
 
-go 1.20
+go 1.23
 
 require (
-	github.com/cenkalti/backoff/v4 v4.3.0
+	github.com/cenkalti/backoff/v6 v6.0.1
 	github.com/giantswarm/microerror v0.4.1
 	github.com/giantswarm/micrologger v1.1.2
 )
